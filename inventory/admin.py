@@ -96,3 +96,5 @@ class BorrowRequestAdmin(admin.ModelAdmin):
     search_fields = (
         'nama', 'nim', 'email',
     )
+    readonly_fields = ('created_at',)
+    fields = ('nama','nim','email','telepon','barang','alasan','surat','status','created_at')

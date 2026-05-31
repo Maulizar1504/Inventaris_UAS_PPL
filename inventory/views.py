@@ -369,7 +369,7 @@ def supplier_list(request):
 def borrow_request(request):
 
     if request.method == 'POST':
-        form = BorrowRequestForm(request.POST or None)
+        form = BorrowRequestForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             form.save()
             messages.success(request, 'Permohonan peminjaman berhasil dikirim. Mohon serahkan surat keterangan ke Sekretariat.')

@@ -126,7 +126,7 @@ class BorrowRequestForm(forms.ModelForm):
     class Meta:
         model = BorrowRequest
         fields = (
-            'nama', 'nim', 'email', 'telepon', 'barang', 'alasan'
+            'nama', 'nim', 'email', 'telepon', 'barang', 'alasan', 'surat'
         )
 
         widgets = {
@@ -136,4 +136,5 @@ class BorrowRequestForm(forms.ModelForm):
             'telepon': forms.TextInput(attrs={'class': 'form-control'}),
             'barang': forms.Select(attrs={'class': 'form-select'}),
             'alasan': forms.Textarea(attrs={'class': 'form-control', 'rows': 4}),
+            'surat': forms.ClearableFileInput(attrs={'class': 'form-control'})
         }

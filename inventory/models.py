@@ -170,3 +170,10 @@ class BorrowRequest(models.Model):
 
     def __str__(self):
         return f"{self.nama} - {self.barang or 'Generic request'}"
+
+    surat = models.FileField(
+        upload_to='surat/',
+        blank=True,
+        null=True,
+        help_text='Unggah surat permohonan/pengantar (PDF/JPG/PNG)'
+    )
