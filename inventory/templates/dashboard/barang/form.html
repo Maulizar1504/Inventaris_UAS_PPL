@@ -1,0 +1,30 @@
+{% extends 'public/base_public.html' %}
+
+{% block content %}
+
+<section class="py-5">
+    <div class="container">
+        <div class="card p-4">
+            <h4 class="mb-3">{% if form.instance.pk %}Edit Barang{% else %}Tambah Barang{% endif %}</h4>
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="mb-3">
+                    <label class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.help_text %}<div class="form-text">{{ field.help_text }}</div>{% endif %}
+                    {% for error in field.errors %}<div class="text-danger small">{{ error }}</div>{% endfor %}
+                </div>
+                {% endfor %}
+
+                <div>
+                    <button class="btn btn-primary">Simpan</button>
+                    <a href="{% url 'barang_list' %}" class="btn btn-outline-secondary">Batal</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

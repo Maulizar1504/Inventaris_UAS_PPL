@@ -1,0 +1,28 @@
+{% extends 'public/base_public.html' %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between mb-3">
+      <h3>Daftar Kategori</h3>
+      <a href="{% url 'kategori_create' %}" class="btn btn-primary">Tambah</a>
+    </div>
+
+    <div class="card p-3">
+      <ul class="list-group">
+        {% for k in kategori %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          {{ k.nama }}
+          <div>
+            <a href="{% url 'kategori_update' k.pk %}" class="btn btn-sm btn-outline-primary">Edit</a>
+            <a href="{% url 'kategori_delete' k.pk %}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Hapus kategori?')">Hapus</a>
+          </div>
+        </li>
+        {% empty %}
+        <li class="list-group-item">Belum ada kategori.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

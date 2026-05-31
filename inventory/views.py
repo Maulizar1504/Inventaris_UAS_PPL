@@ -1,4 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import HttpResponse
+import io
+from reportlab.pdfgen import canvas
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -143,10 +147,19 @@ def barang_list(request):
     if query:
         barang = barang.filter(nama__icontains=query)
 
+    # Pagination
+    page = request.GET.get('page', 1)
+    paginator = Paginator(barang, 10)
+    try:
+        barang_page = paginator.page(page)
+    except PageNotAnInteger:
+        barang_page = paginator.page(1)
+    except EmptyPage:
+        barang_page = paginator.page(paginator.num_pages)
+
     context = {
-
-        'barang': barang
-
+        'barang': barang_page,
+        'paginator': paginator,
     }
 
     return render(
@@ -418,3 +431,41 @@ def supplier_delete(request, pk):
     supplier.delete()
 
     return redirect('supplier_list')
+
+
+@login_required
+def barang_export_pdf(request):
+    # Export barang list to PDF using ReportLab
+    buffer = io.BytesIO()
+    p = canvas.Canvas(buffer)
+
+    barang_qs = Barang.objects.all().order_by('kode_barang')
+
+    y = 800
+    p.setFont('Helvetica-Bold', 14)
+    p.drawString(50, y, 'Daftar Inventaris')
+    y -= 30
+    p.setFont('Helvetica', 10)
+    headers = ['Kode', 'Nama', 'Kategori', 'Supplier', 'Stok', 'Lokasi', 'Status']
+    x_positions = [50, 120, 300, 380, 460, 500, 560]
+    # header
+    for i, h in enumerate(headers):
+        p.drawString(x_positions[i], y, h)
+    y -= 20
+
+    for item in barang_qs:
+        if y < 50:
+            p.showPage()
+            y = 800
+        p.drawString(x_positions[0], y, str(item.kode_barang))
+        p.drawString(x_positions[1], y, str(item.nama)[:30])
+        p.drawString(x_positions[2], y, str(item.kategori))
+        p.drawString(x_positions[3], y, str(item.supplier))
+        p.drawString(x_positions[4], y, str(item.stok))
+        p.drawString(x_positions[5], y, str(item.lokasi)[:20])
+        p.drawString(x_positions[6], y, str(item.status))
+        y -= 15
+
+    p.save()
+    buffer.seek(0)
+    return HttpResponse(buffer, content_type='application/pdf')

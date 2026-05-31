@@ -66,6 +66,12 @@ urlpatterns = [
     ),
 
     path(
+        'dashboard/barang/export/pdf/',
+        views.barang_export_pdf,
+        name='barang_export_pdf'
+    ),
+
+    path(
         'dashboard/barang/edit/<int:pk>/',
         views.barang_update,
         name='barang_update'
