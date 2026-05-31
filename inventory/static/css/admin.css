@@ -1,0 +1,86 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Sidebar */
+
+.main-sidebar {
+    background: linear-gradient(
+        180deg,
+        #0f172a,
+        #1e293b
+    );
+}
+
+/* Navbar */
+
+.main-header {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Card */
+
+.card {
+    border-radius: 18px !important;
+    border: none !important;
+
+    box-shadow:
+        0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Dashboard */
+
+.content-wrapper {
+    background: #f1f5f9;
+}
+
+/* Sidebar link */
+
+.nav-sidebar .nav-link {
+    border-radius: 12px;
+    margin: 5px;
+}
+
+/* Hover */
+
+.nav-sidebar .nav-link:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Active */
+
+.nav-sidebar .nav-link.active {
+    background: #3b82f6 !important;
+}
+
+/* Button */
+
+.btn-primary {
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #3b82f6
+        );
+
+    border: none;
+
+    border-radius: 12px;
+}
+
+/* Table */
+
+.table {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Brand */
+
+.brand-link {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}

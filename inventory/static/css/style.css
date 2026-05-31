@@ -1,0 +1,455 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background: #f8fafc;
+
+    color: #1e293b;
+
+    overflow-x: hidden;
+}
+
+a {
+
+    text-decoration: none;
+}
+
+section {
+
+    padding-top: 80px;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+
+    backdrop-filter: blur(10px);
+
+    background: rgba(255,255,255,0.95) !important;
+
+    transition: 0.3s;
+}
+
+.navbar-brand {
+
+    font-size: 1.2rem;
+}
+
+.nav-link {
+
+    font-weight: 500;
+
+    color: #334155 !important;
+}
+
+.nav-link:hover {
+
+    color: #2563eb !important;
+}
+
+.logo-circle {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-weight: bold;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #60a5fa
+    );
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn-primary {
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 12px 24px;
+
+    font-weight: 600;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(
+            37,
+            99,
+            235,
+            0.3
+        );
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero-section{
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(15,23,42,0.85),
+            rgba(15,23,42,0.85)
+        ),
+        url("/static/images/bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+.hero-section h1 {
+
+    font-size: 4rem;
+
+    line-height: 1.2;
+
+    color: white;
+}
+
+.hero-section p {
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.8
+    );
+}
+
+.hero-image {
+
+    max-width: 100%;
+
+    animation:
+        floatAnimation 4s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+
+    0% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-15px);
+    }
+
+    100% {
+
+        transform:
+            translateY(0);
+    }
+}
+
+/* =========================================
+   STATISTIC
+========================================= */
+
+.stat-card {
+
+    border-radius: 24px;
+
+    background: white;
+
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+.stat-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 20px 40px rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
+
+.stat-card h1 {
+
+    font-size: 3rem;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+
+    border: none !important;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
+
+.card img {
+
+    transition: 0.3s;
+}
+
+.card:hover img {
+
+    transform: scale(1.03);
+}
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #3b82f6
+        );
+
+    color: white;
+
+    padding: 120px 0;
+}
+
+.about-card {
+
+    border-radius: 20px;
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+.about-card:hover {
+
+    transform:
+        translateY(-8px);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #020617
+        );
+
+    padding-top: 80px;
+
+    padding-bottom: 30px;
+}
+
+.footer-text {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+}
+
+.footer-links {
+
+    list-style: none;
+
+    padding: 0;
+}
+
+.footer-links li {
+
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+
+    color: white;
+
+    padding-left: 5px;
+}
+
+.footer-line {
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.1
+        );
+}
+
+.copyright {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.6
+        );
+
+    margin: 0;
+}
+
+/* =========================================
+   BADGE
+========================================= */
+
+.badge {
+
+    border-radius: 50px;
+
+    font-weight: 500;
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+img {
+
+    max-width: 100%;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+    .hero-section {
+
+        text-align: center;
+    }
+
+    .hero-section h1 {
+
+        font-size: 2.8rem;
+    }
+
+    .hero-image {
+
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero-section h1 {
+
+        font-size: 2.2rem;
+    }
+
+    .display-5 {
+
+        font-size: 2rem;
+    }
+
+    .footer-section {
+
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .hero-section {
+
+        padding-top: 120px;
+    }
+
+    .hero-section h1 {
+
+        font-size: 1.9rem;
+    }
+
+    .btn-primary {
+
+        width: 100%;
+    }
+}

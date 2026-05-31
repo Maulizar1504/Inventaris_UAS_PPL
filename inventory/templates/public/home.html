@@ -1,0 +1,421 @@
+{% extends 'public/base_public.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center min-vh-100">
+
+            <div class="col-lg-6">
+
+                <span class="badge bg-primary px-3 py-2 mb-3">
+
+                    Program Studi Informatika
+
+                </span>
+
+                <h1 class="fw-bold display-3 mb-4 text-white">
+
+                    SmartInventory
+                    Informatika
+
+                </h1>
+
+                <p class="lead mb-4">
+
+                    Sistem Inventaris Digital untuk mengelola seluruh
+                    aset, perangkat laboratorium, komputer, jaringan,
+                    dan sarana pendukung Program Studi Informatika
+                    secara modern dan terintegrasi.
+
+                </p>
+
+                <div class="d-flex gap-3 flex-wrap">
+
+                    <a
+                        href="/about/"
+                        class="btn btn-primary btn-lg"
+                    >
+                        Pelajari Sistem
+                    </a>
+
+                    <a
+                        href="/admin/"
+                        class="btn btn-outline-light btn-lg"
+                    >
+                        Login Admin
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img
+                    src="{% static 'images/inventory.svg' %}"
+                    class="img-fluid hero-image"
+                    alt="Inventory"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATISTIK -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                Statistik Inventaris
+
+            </h2>
+
+            <p class="text-muted">
+
+                Data inventaris terkini Program Studi Informatika
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="card stat-card h-100">
+
+                    <div class="card-body text-center p-5">
+
+                        <h1 class="text-primary fw-bold display-4">
+
+                            {{ total_barang }}
+
+                        </h1>
+
+                        <p class="mb-0">
+
+                            Total Barang
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card stat-card h-100">
+
+                    <div class="card-body text-center p-5">
+
+                        <h1 class="text-success fw-bold display-4">
+
+                            {{ total_kategori }}
+
+                        </h1>
+
+                        <p class="mb-0">
+
+                            Kategori
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card stat-card h-100">
+
+                    <div class="card-body text-center p-5">
+
+                        <h1 class="text-warning fw-bold display-4">
+
+                            {{ total_supplier }}
+
+                        </h1>
+
+                        <p class="mb-0">
+
+                            Supplier
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FITUR -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                Fitur Utama
+
+            </h2>
+
+            <p class="text-muted">
+
+                Pengelolaan inventaris yang lebih cepat dan efisien
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4">
+
+                <div class="card h-100 p-4 text-center">
+
+                    <div class="mb-3">
+
+                        <i class="bi bi-box-seam fs-1 text-primary"></i>
+
+                    </div>
+
+                    <h4 class="fw-bold">
+
+                        Inventaris Barang
+
+                    </h4>
+
+                    <p class="text-muted">
+
+                        Kelola seluruh aset laboratorium dan perangkat
+                        informatika dalam satu sistem.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="card h-100 p-4 text-center">
+
+                    <div class="mb-3">
+
+                        <i class="bi bi-tags fs-1 text-success"></i>
+
+                    </div>
+
+                    <h4 class="fw-bold">
+
+                        Kategori Barang
+
+                    </h4>
+
+                    <p class="text-muted">
+
+                        Pengelompokan inventaris agar lebih mudah
+                        dikelola dan dicari.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="card h-100 p-4 text-center">
+
+                    <div class="mb-3">
+
+                        <i class="bi bi-truck fs-1 text-warning"></i>
+
+                    </div>
+
+                    <h4 class="fw-bold">
+
+                        Supplier
+
+                    </h4>
+
+                    <p class="text-muted">
+
+                        Menyimpan data pemasok inventaris secara
+                        lengkap dan terorganisir.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BARANG TERBARU -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                Inventaris Terbaru
+
+            </h2>
+
+            <p class="text-muted">
+
+                Barang yang baru ditambahkan ke sistem
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            {% for item in barang_terbaru %}
+
+            <div class="col-lg-4">
+
+                <div class="card h-100 shadow-sm">
+
+                    {% if item.gambar %}
+
+                    <img
+                        src="{{ item.gambar.url }}"
+                        class="card-img-top"
+                        style="height:240px; object-fit:cover;"
+                    >
+
+                    {% endif %}
+
+                    <div class="card-body">
+
+                        <h5 class="fw-bold">
+
+                            {{ item.nama }}
+
+                        </h5>
+
+                        <p class="text-muted">
+
+                            {{ item.kategori }}
+
+                        </p>
+
+                        <p>
+
+                            Lokasi:
+                            <strong>
+                                {{ item.lokasi }}
+                            </strong>
+
+                        </p>
+
+                        <span class="badge bg-success">
+
+                            {{ item.status }}
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <div class="col-12">
+
+                <div class="alert alert-info text-center">
+
+                    Belum ada data inventaris.
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="py-5 text-center">
+
+    <div class="container">
+
+        <div class="card border-0 shadow-lg p-5">
+
+            <h2 class="fw-bold mb-3">
+
+                Kelola Inventaris Lebih Mudah
+
+            </h2>
+
+            <p class="text-muted mb-4">
+
+                Masuk ke dashboard administrator untuk
+                mengelola seluruh data inventaris.
+
+            </p>
+
+            <div>
+
+                <a
+                    href="/admin/"
+                    class="btn btn-primary btn-lg"
+                >
+                    Buka Dashboard Admin
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

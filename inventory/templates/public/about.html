@@ -1,0 +1,364 @@
+{% extends 'public/base_public.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+
+<section class="about-hero">
+
+    <div class="container">
+
+        <div class="row align-items-center min-vh-75">
+
+            <div class="col-lg-6">
+
+                <span class="badge hero-badge mb-3">
+                    Tentang SmartInventory
+                </span>
+
+                <h1 class="display-4 fw-bold mb-4">
+
+                    Sistem Inventaris Digital
+                    Program Studi Informatika
+
+                </h1>
+
+                <p class="lead text-muted">
+
+                    SmartInventory merupakan sistem pengelolaan inventaris
+                    berbasis web yang dirancang untuk membantu Program Studi
+                    Informatika dalam mengelola seluruh aset kampus secara
+                    terpusat, modern, dan efisien.
+
+                </p>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img
+                    src="{% static 'images/about.png' %}"
+                    class="img-fluid about-image"
+                    alt="About SmartInventory"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TENTANG SISTEM -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+
+                <div class="card shadow-sm border-0">
+
+                    <div class="card-body p-5">
+
+                        <h2 class="fw-bold mb-4">
+
+                            Apa itu SmartInventory?
+
+                        </h2>
+
+                        <p class="text-muted fs-5">
+
+                            SmartInventory adalah platform inventaris digital
+                            yang digunakan untuk mencatat, mengelola, dan
+                            memonitor seluruh aset Program Studi Informatika.
+
+                        </p>
+
+                        <p class="text-muted fs-5">
+
+                            Sistem ini mempermudah pengelolaan perangkat
+                            laboratorium komputer, proyektor, server,
+                            perangkat jaringan, furnitur, serta berbagai
+                            inventaris lainnya secara terintegrasi.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FITUR -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                Fitur Unggulan
+
+            </h2>
+
+            <p class="text-muted">
+
+                Kemudahan pengelolaan inventaris dalam satu sistem
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4">
+
+                <div class="card feature-card h-100">
+
+                    <div class="card-body text-center p-4">
+
+                        <div class="feature-icon mb-3">
+
+                            📦
+
+                        </div>
+
+                        <h4 class="fw-bold">
+
+                            Data Inventaris
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Menyimpan seluruh data barang inventaris
+                            secara terpusat dan terstruktur.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="card feature-card h-100">
+
+                    <div class="card-body text-center p-4">
+
+                        <div class="feature-icon mb-3">
+
+                            🏷️
+
+                        </div>
+
+                        <h4 class="fw-bold">
+
+                            Kategori Barang
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Pengelompokan inventaris berdasarkan
+                            kategori agar lebih mudah dikelola.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="card feature-card h-100">
+
+                    <div class="card-body text-center p-4">
+
+                        <div class="feature-icon mb-3">
+
+                            🚚
+
+                        </div>
+
+                        <h4 class="fw-bold">
+
+                            Data Supplier
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Pengelolaan data pemasok inventaris
+                            secara lengkap dan rapi.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MANFAAT -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                Manfaat Sistem
+
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+
+                <div class="benefit-card">
+
+                    <h5 class="fw-bold">
+
+                        ✓ Monitoring Inventaris
+
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Memudahkan pelacakan kondisi dan lokasi
+                        setiap inventaris kampus.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="benefit-card">
+
+                    <h5 class="fw-bold">
+
+                        ✓ Efisiensi Administrasi
+
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Mengurangi pencatatan manual dan
+                        mempercepat proses pendataan.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="benefit-card">
+
+                    <h5 class="fw-bold">
+
+                        ✓ Data Terpusat
+
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Semua data tersimpan dalam satu sistem
+                        yang mudah diakses.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="benefit-card">
+
+                    <h5 class="fw-bold">
+
+                        ✓ Keamanan Data
+
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Data inventaris dikelola melalui akun
+                        administrator yang aman.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta-section">
+
+    <div class="container text-center">
+
+        <h2 class="fw-bold mb-3">
+
+            Mulai Kelola Inventaris Sekarang
+
+        </h2>
+
+        <p class="mb-4">
+
+            Sistem inventaris modern untuk Program Studi Informatika.
+
+        </p>
+
+        <a
+            href="/login/"
+            class="btn btn-light btn-lg px-4"
+        >
+            Login Administrator
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
