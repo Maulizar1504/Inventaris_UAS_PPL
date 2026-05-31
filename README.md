@@ -42,7 +42,7 @@ smartinventory/
 
 🚀 Cara Instalasi & Menjalankan Project
 1. Clone Repository
-git clone <link-repository>
+git clone <https://github.com/Maulizar1504/Inventaris_UAS_PPL>
 2. Masuk ke Folder Project
 cd 2308107010007_UAS
 3. Buat Virtual Environment
