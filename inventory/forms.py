@@ -6,6 +6,8 @@ from .models import (
     Supplier
 )
 
+from .models import BorrowRequest
+
 
 class BarangForm(forms.ModelForm):
 
@@ -115,4 +117,23 @@ class SupplierForm(forms.ModelForm):
                 }
             ),
 
+        }
+
+
+
+class BorrowRequestForm(forms.ModelForm):
+
+    class Meta:
+        model = BorrowRequest
+        fields = (
+            'nama', 'nim', 'email', 'telepon', 'barang', 'alasan'
+        )
+
+        widgets = {
+            'nama': forms.TextInput(attrs={'class': 'form-control'}),
+            'nim': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'telepon': forms.TextInput(attrs={'class': 'form-control'}),
+            'barang': forms.Select(attrs={'class': 'form-select'}),
+            'alasan': forms.Textarea(attrs={'class': 'form-control', 'rows': 4}),
         }

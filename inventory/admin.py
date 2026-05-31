@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 
 from .models import Barang, Kategori, Supplier
+from .models import BorrowRequest
 
 
 @admin.register(Kategori)
@@ -79,3 +80,19 @@ class BarangAdmin(admin.ModelAdmin):
         return "No Image"
 
     preview.short_description = "Preview"
+
+
+@admin.register(BorrowRequest)
+class BorrowRequestAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'id', 'nama', 'nim', 'email', 'telepon', 'barang', 'status', 'created_at'
+    )
+
+    list_filter = (
+        'status',
+    )
+
+    search_fields = (
+        'nama', 'nim', 'email',
+    )

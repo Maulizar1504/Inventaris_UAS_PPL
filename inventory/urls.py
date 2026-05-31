@@ -20,6 +20,12 @@ urlpatterns = [
         name='about'
     ),
 
+    path(
+        'borrow/',
+        views.borrow_request,
+        name='borrow_request'
+    ),
+
 
     # =========================================
     # AUTH

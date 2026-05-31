@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .models import Barang, Kategori, Supplier
-from .forms import BarangForm, KategoriForm, SupplierForm
+from .forms import BarangForm, KategoriForm, SupplierForm, BorrowRequestForm
 
 
 # ==========================================
@@ -364,6 +364,20 @@ def supplier_list(request):
 
         }
     )
+
+
+def borrow_request(request):
+
+    if request.method == 'POST':
+        form = BorrowRequestForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Permohonan peminjaman berhasil dikirim. Mohon serahkan surat keterangan ke Sekretariat.')
+            return redirect('about')
+    else:
+        form = BorrowRequestForm()
+
+    return render(request, 'public/borrow_request.html', {'form': form})
 
 
 @login_required

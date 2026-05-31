@@ -131,3 +131,42 @@ class Barang(models.Model):
     def __str__(self):
 
         return f"{self.kode_barang} - {self.nama}"
+
+
+
+# ==========================================
+# REQUESTS / PEMINJAMAN
+# ==========================================
+
+
+class BorrowRequest(models.Model):
+
+    STATUS_CHOICES = (
+        ('pending', 'Pending'),
+        ('approved', 'Approved'),
+        ('rejected', 'Rejected'),
+    )
+
+    nama = models.CharField(max_length=200)
+
+    nim = models.CharField(max_length=50, blank=True, null=True)
+
+    email = models.EmailField()
+
+    telepon = models.CharField(max_length=20, blank=True, null=True)
+
+    barang = models.ForeignKey(
+        Barang,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
+
+    alasan = models.TextField()
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+
+    def __str__(self):
+        return f"{self.nama} - {self.barang or 'Generic request'}"
