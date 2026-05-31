@@ -46,6 +46,7 @@ class BarangAdmin(admin.ModelAdmin):
         'stok',
         'lokasi',
         'status',
+        'tampil_di_home',
         'preview',
     )
 
@@ -53,6 +54,7 @@ class BarangAdmin(admin.ModelAdmin):
         'kategori',
         'supplier',
         'status',
+        'tampil_di_home',
     )
 
     search_fields = (

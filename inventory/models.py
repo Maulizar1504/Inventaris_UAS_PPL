@@ -95,6 +95,11 @@ class Barang(models.Model):
         null=True
     )
 
+    tampil_di_home = models.BooleanField(
+        default=True,
+        help_text='Tampilkan barang ini di halaman utama (landing page)'
+    )
+
     deskripsi = models.TextField(
         blank=True,
         null=True
