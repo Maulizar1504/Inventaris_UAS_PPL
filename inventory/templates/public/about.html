@@ -5,41 +5,29 @@
 {% block content %}
 
 <!-- HERO -->
-
 <section class="about-hero">
-
     <div class="container">
-
         <div class="row align-items-center min-vh-75">
-
             <div class="col-lg-6">
-
                 <span class="badge hero-badge mb-3">
                     Tentang SmartInventory
                 </span>
-
-                <h1 class="display-4 fw-bold mb-4">
-
+               <h1 class="h2 fw-bold mb-4">
                     Sistem Inventaris Digital
                     Program Studi Informatika
-
                 </h1>
-
-                <p class="lead text-muted">
-
-                    SmartInventory merupakan sistem pengelolaan inventaris
-                    berbasis web yang dirancang untuk membantu Program Studi
-                    Informatika dalam mengelola seluruh aset kampus secara
-                    terpusat, modern, dan efisien.
-
+                <!-- Ditambahkan style="text-align: justify;" di bawah ini -->
+                <p class="lead text-muted" style="text-align: justify;">
+                    SmartInventory adalah sistem pengelolaan inventaris berbasis web yang dirancang untuk membantu Program Studi Informatika dalam mengelola seluruh aset kampus secara terpusat, modern, dan efisien.
+                    Pada sistem ini, pengguna (user) memiliki peran yang sederhana, yaitu hanya untuk melihat informasi terkait barang. User dapat mengecek apakah suatu barang tersedia atau tidak, serta mengetahui statusnya, apakah sedang dipinjam atau sedang tidak digunakan.
+                    Selain itu, user juga dapat melihat informasi dan ketentuan terkait peminjaman barang di jurusan, seperti syarat-syarat yang harus dipenuhi sebelum mengajukan peminjaman. Dengan begitu, proses pengecekan dan pemahaman aturan peminjaman menjadi lebih mudah tanpa perlu mengakses proses administrasi secara langsung.
                 </p>
-
             </div>
 
             <div class="col-lg-6 text-center">
 
                 <img
-                    src="{% static 'images/about.png' %}"
+                    src="{% static 'images/inventory.png' %}"
                     class="img-fluid about-image"
                     alt="About SmartInventory"
                 >
@@ -362,42 +350,84 @@
 </section>
 
 <!-- PEMINJAMAN BARANG -->
-
 <section class="py-5 bg-light">
-
     <div class="container">
-
         <div class="row justify-content-center">
-
             <div class="col-lg-10">
-
                 <div class="card shadow-sm border-0">
-
                     <div class="card-body p-5">
 
-                        <h2 class="fw-bold mb-4">Peminjaman Barang</h2>
+                        <!-- Judul Utama -->
+                        <h2 class="fw-bold mb-4 text-dark text-center text-lg-start">Peminjaman Barang</h2>
 
-                        <p class="text-muted fs-5">Mahasiswa atau pihak internal yang ingin meminjam barang inventaris harus memenuhi ketentuan berikut sebelum proses peminjaman dapat dilakukan:</p>
+                        <!-- Paragraf Pengantar -->
+                        <p class="text-muted mb-4" style="text-align: justify; line-height: 1.6;">
+                            Mahasiswa atau pihak internal yang ingin meminjam barang inventaris harus memenuhi ketentuan berikut sebelum proses peminjaman dapat dilakukan:
+                        </p>
 
-                        <ol class="text-muted">
-                            <li>Melampirkan surat permohonan atau surat keterangan peminjaman yang ditandatangani oleh pihak pengaju.</li>
-                            <li>Surat permohonan dapat diserahkan langsung ke <strong>Sekretariat dan ruang administrasi Jurusan Informatika berada tepat di Blok A Lantai 3 pada kompleks Gedung FMIPA USK.</strong></li>
-                            <li>Menunggu verifikasi dari petugas administrasi dan konfirmasi ketersediaan barang.</li>
-                            <li>Setelah disetujui, peminjam wajib mengikuti prosedur pengambilan dan pengembalian sesuai ketentuan.</li>
+                        <!-- List Ketentuan (Rata Kanan-Kiri & Rapi) -->
+                        <ol class="text-muted mb-4 ps-3" style="text-align: justify; line-height: 1.8;">
+                            <li class="mb-2">Melampirkan surat permohonan atau surat keterangan peminjaman yang ditandatangani oleh pihak pengaju.</li>
+                            <li class="mb-2">Surat permohonan dapat diserahkan langsung ke Sekretariat dan ruang administrasi Jurusan Informatika berada tepat di Blok A Lantai 3 pada kompleks Gedung FMIPA USK.</li>
+                            <li class="mb-2">Menunggu verifikasi dari petugas administrasi dan konfirmasi ketersediaan barang.</li>
+                            <li class="mb-2">Setelah disetujui, peminjam wajib mengikuti prosedur pengambilan dan pengembalian sesuai ketentuan.</li>
                         </ol>
 
-                        <p class="text-muted fs-5">Untuk informasi lebih lanjut atau bantuan terkait peminjaman, silakan hubungi Sekretariat Jurusan atau kunjungi langsung pada jam kerja.</p>
+                        <!-- Paragraf Penutup -->
+                        <p class="text-muted mb-0" style="text-align: justify; line-height: 1.6;">
+                            Untuk informasi lebih lanjut atau bantuan terkait peminjaman, silakan hubungi Sekretariat Jurusan atau kunjungi langsung pada jam kerja.
+                        </p>
+
+                        <!-- ========================================== -->
+                        <!-- TAMBAHAN BARU: JAM OPERASIONAL & TOMBOL CTA -->
+                        <!-- ========================================== -->
+                        <hr class="my-4" style="opacity: 0.15;">
+
+                        <div class="row align-items-center g-4">
+                            <!-- Kolom Informasi Jam Kerja -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white rounded border border-light shadow-sm text-muted" style="font-size: 0.95rem;">
+                                    <p class="mb-1 text-dark fw-bold">🕒 Jam Operasional Sekretariat:</p>
+                                    <ul class="list-unstyled mb-0 ps-1" style="line-height: 1.5;">
+                                        <li>• Senin - Jumat: 08:00 - 16:00 WIB</li>
+                                        <li>• Istirahat: 12:00 - 13:30 WIB</li>
+                                        <li class="text-danger-emphasis small">*Tutup pada hari libur nasional</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                           <!-- Kolom Tombol Aksi (Call To Action) -->
+                        <div class="col-md-6 text-md-end text-center">
+                            <div class="d-flex flex-wrap gap-2 justify-content-md-end justify-content-center">
+                                <a href="https://docs.google.com/document/d/12S6tIwbEtJKDAY65qwhTJghAymNkji_L/edit?usp=sharing&ouid=104409540870844436442&rtpof=true&sd=true" target="_blank" class="btn btn-outline-primary px-4 py-2 shadow-sm fw-semibold">
+                                    📄 Unduh Format Surat
+                                </a>
+                                
+                                <a href="/" class="btn btn-outline-secondary px-4 py-2 shadow-sm fw-semibold">
+                                    🔍 Cek Stok Barang
+                                </a>
+                                
+                                <a href="{% url 'borrow_request' %}" class="btn btn-primary px-4 py-2 shadow-sm fw-semibold">
+                                    ➕ Ajukan Peminjaman
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <!-- Info Kontak Tambahan (Footer Card) -->
+                        <div class="row mt-4 pt-2 text-center text-muted border-top border-light" style="font-size: 0.9rem;">
+                            <div class="col-sm-6 mb-2 mb-sm-0">
+                                ✉️ informatika@usk.ac.id
+                            </div>
+                            <div class="col-sm-6">
+                                🌐 informatika.usk.ac.id
+                            </div>
+                        </div>
+                        <!-- ========================================== -->
 
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
-
 {% endblock %}

@@ -2,28 +2,51 @@
 
 {% block content %}
 
-<section class="py-5">
+<section class="py-5" style="background-color: #f8f9fa;">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <div class="card p-4 shadow-sm">
-          <h3 class="mb-3">Formulir Permohonan Peminjaman</h3>
-          <p class="text-muted">Isi form berikut dan serahkan surat keterangan ke Sekretariat Jurusan sesuai petunjuk di halaman About.</p>
-          <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% for field in form %}
-            <div class="mb-3">
-              <label class="form-label">{{ field.label }}</label>
-              {{ field }}
-              {% for err in field.errors %}<div class="text-danger small">{{ err }}</div>{% endfor %}
-            </div>
-            {% endfor %}
+        <div class="card border-0 p-4 shadow-sm rounded-3">
+          <div class="card-body">
+            <!-- Judul Form -->
+            <h3 class="fw-bold text-dark mb-2">📄 Formulir Permohonan Peminjaman</h3>
+            <p class="text-muted mb-4">
+              Isi form berikut dengan lengkap dan serahkan surat keterangan ke Sekretariat Jurusan sesuai petunjuk di halaman About.
+            </p>
+            
+            <hr class="mb-4 text-secondary opacity-25">
 
-            <div>
-              <button class="btn btn-primary">Kirim Permohonan</button>
-              <a href="{% url 'about' %}" class="btn btn-outline-secondary">Batal</a>
-            </div>
-          </form>
+            <!-- Form Start -->
+            <form method="post" enctype="multipart/form-data" novalidate>
+              {% csrf_token %}
+              
+              {% for field in form %}
+              <div class="mb-3">
+                <label class="form-label fw-semibold text-secondary">{{ field.label }}</label>
+                
+                <!-- Input Field Otomatis Django -->
+                {{ field }}
+                
+                <!-- Error Handling jika input salah -->
+                {% for err in field.errors %}
+                <div class="text-danger small mt-1">⚠️ {{ err }}</div>
+                {% endfor %}
+              </div>
+              {% endfor %}
+
+              <!-- Tombol Aksi -->
+              <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+                <a href="{% url 'about' %}" class="btn btn-outline-secondary px-4 py-2 fw-semibold rounded-2">
+                    ❌ Batal
+                </a>
+                <button type="submit" class="btn btn-primary px-4 py-2 shadow-sm fw-semibold rounded-2">
+                    🚀 Kirim Permohonan
+                </button>
+              </div>
+            </form>
+            <!-- Form End -->
+
+          </div>
         </div>
       </div>
     </div>
