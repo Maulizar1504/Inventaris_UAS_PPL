@@ -1,166 +1,90 @@
-# SmartInventory
+📦 SmartInventory
+SmartInventory adalah aplikasi web manajemen inventaris barang berbasis Django yang dikembangkan untuk memenuhi tugas Final Stage mata kuliah Proyek Perangkat Lunak (2026). Aplikasi ini digunakan untuk mengelola data barang, kategori, supplier, serta proses peminjaman barang dengan sistem admin dashboard yang terproteksi.
 
-SmartInventory adalah aplikasi web inventaris barang berbasis Django yang dibuat untuk memenuhi tugas Final Stage mata kuliah Proyek Perangkat Lunak.
+✨ Fitur Utama
+- Public Page
+- Landing Page
+- About Page
+- Informasi Inventaris Barang
+- Form Permintaan Peminjaman Barang
 
----
+🛠️ Admin Dashboard
+- Login Admin (Authentication)
+- Dashboard Statistik (Chart.js)
+- CRUD Barang
+- CRUD Kategori
+- CRUD Supplier
+- Upload & manajemen foto barang
+- Search & Pagination
+- Export PDF (ReportLab)
+- Manajemen permintaan peminjaman barang
 
-# Fitur Aplikasi
+🧰 Teknologi yang Digunakan
+- Python 3.x
+- Django
+- Bootstrap 5
+- SQLite
+- Chart.js
+- ReportLab
 
-## Public Page
-
-* Landing Page
-* About Page
-* Informasi Inventaris
-
-## Admin Dashboard
-
-* Login Admin
-* Dashboard Statistik
-* CRUD Barang
-* CRUD Kategori
-* CRUD Supplier
-* Upload Foto Barang
-* Search Barang
-* Pagination
-* Export PDF
-
----
-
-# Teknologi
-
-* Python
-* Django
-* Bootstrap 5
-* SQLite
-* Chart.js
-* ReportLab
-
----
-
-# Struktur Project
-
-```bash
+📁 Struktur Project
 smartinventory/
 │
-├── inventory/
-├── media/
-├── templates/
-├── static/
-├── db.sqlite3
+├── inventory/            # App utama
+├── media/                # File upload (gambar & dokumen)
+├── smartinventory/       # Config project Django
+├── templates/            # HTML templates
+├── static/               # CSS, JS, images, favicon
+├── db.sqlite3            # Database SQLite
 ├── manage.py
-└── requirements.txt
-```
+├── requirements.txt
+└── README.md
 
----
-
-# Cara Instalasi
-
-## 1. Clone Repository
-
-```bash
+🚀 Cara Instalasi & Menjalankan Project
+1. Clone Repository
 git clone <link-repository>
-```
-
----
-
-## 2. Masuk Folder Project
-
-```bash
+2. Masuk ke Folder Project
 cd 2308107010007_UAS
-```
-
----
-
-## 3. Buat Virtual Environment
-
-```bash
+3. Buat Virtual Environment
 python -m venv venv
-```
-
----
-
-## 4. Aktifkan Virtual Environment
-
-Windows:
-
-```bash
-venv\Scripts\activate
-```
-
----
-
-## 5. Install Dependency
-
-```bash
+4. Aktifkan Virtual Environment
+Windows:venv\Scripts\activate
+5. Install Dependency
 pip install -r requirements.txt
-```
-
----
-
-## 6. Jalankan Migrasi Database
-
-```bash
+6. Migrasi Database
 python manage.py migrate
-```
-
----
-
-## 7. Buat Admin
-
-```bash
+7. Buat Admin User
 python manage.py createsuperuser
-```
-
----
-
-## 8. Jalankan Server
-
-```bash
+8. Jalankan Server
 python manage.py runserver
-```
 
----
-
-# Akses Aplikasi
-
-## Landing Page
-
-```text
+🌍 Akses Aplikasi
+🏠 Landing Page
 http://127.0.0.1:8000/
-```
-
-## Login Admin
-
-```text
+🔐 Login Admin
 http://127.0.0.1:8000/login/
-```
-
-## Dashboard Admin
-
-```text
+📊 Dashboard Admin
 http://127.0.0.1:8000/dashboard/
-```
 
----
+🔐 Sistem Keamanan
+Dashboard hanya dapat diakses oleh admin yang sudah login
+Semua fitur CRUD dilindungi oleh Django Authentication
+Halaman public dapat diakses tanpa login
+Upload file dan media hanya melalui sistem backend
 
-# Akun Admin
+📂 Data Media
+Project ini sudah mendukung:
+- Upload gambar barang
+- Upload dokumen peminjaman
+- Penyimpanan otomatis di folder media/
+- Fitur Tambahan
+- Pagination data barang
+- Pencarian barang
+- Statistik dashboard dengan grafik
+- Export laporan dalam format PDF
+- Manajemen peminjaman barang
 
-Gunakan akun admin yang dibuat melalui:
-
-```bash
-python manage.py createsuperuser
-```
-
----
-
-# Ketentuan Keamanan
-
-* Dashboard hanya dapat diakses oleh admin yang login.
-* Halaman public dapat diakses tanpa login.
-* Semua fitur CRUD diproteksi login authentication Django.
-
----
-
-# Dibuat Untuk
-
+🎯 Tujuan Project
+Project ini dibuat untuk:
 Final Stage — Proyek Perangkat Lunak 2026
+Sebagai implementasi sistem informasi inventaris berbasis web menggunakan Django.
