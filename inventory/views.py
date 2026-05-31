@@ -13,7 +13,7 @@ from .forms import BarangForm, KategoriForm, SupplierForm
 
 def home(request):
 
-    barang_terbaru = Barang.objects.filter(tampil_di_home=True).order_by('-id')[:6]
+    barang_terbaru = Barang.objects.filter(tampil_di_home=True).order_by('-featured', '-id')[:6]
 
     total_barang = Barang.objects.count()
 

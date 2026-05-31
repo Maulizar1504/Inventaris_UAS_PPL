@@ -100,6 +100,11 @@ class Barang(models.Model):
         help_text='Tampilkan barang ini di halaman utama (landing page)'
     )
 
+    featured = models.BooleanField(
+        default=False,
+        help_text='Tandai sebagai featured untuk prioritas tampilan di landing page'
+    )
+
     deskripsi = models.TextField(
         blank=True,
         null=True
